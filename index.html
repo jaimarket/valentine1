@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Seven Valentine</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background: black;
+      color: white;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      margin: 0;
+    }
+    .container {
+      max-width: 320px;
+    }
+    h1 {
+      margin-bottom: 20px;
+    }
+    .buttons {
+      position: relative;
+      height: 100px;
+    }
+    button {
+      padding: 12px 24px;
+      font-size: 16px;
+      border-radius: 20px;
+      border: none;
+      cursor: pointer;
+      position: absolute;
+    }
+    #yes {
+      background: #ff2f92;
+      color: white;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    #no {
+      background: #444;
+      color: white;
+      left: 50%;
+      top: 50px;
+      transform: translateX(-50%);
+    }
+    p {
+      margin-top: 80px;
+      font-size: 14px;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Seven 💌 Will You Be My Valentine?</h1>
+    <div class="buttons">
+      <button id="yes" onclick="goYes()">Yes</button>
+      <button id="no">No</button>
+    </div>
+    <p>The “No” button seems a bit shy…</p>
+  </div>
+
+  <script>
+    const noBtn = document.getElementById("no");
+
+    noBtn.addEventListener("mouseenter", moveNo);
+    noBtn.addEventListener("touchstart", moveNo);
+
+    function moveNo() {
+      const x = Math.random() * 200 - 100;
+      const y = Math.random() * 100 - 50;
+      noBtn.style.transform = `translate(${x}px, ${y}px)`;
+    }
+
+    function goYes() {
+      window.location.href = "celebration.html";
+    }
+  </script>
+</body>
+</html>
